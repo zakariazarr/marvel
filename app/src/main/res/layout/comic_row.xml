@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:foreground="?selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/card_corner_radius">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <ImageView
+           android:id="@+id/comic_image"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:src="@android:drawable/ic_dialog_alert"
+           android:scaleType="fitXY"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toTopOf="@id/comic_name"
+           />
+
+       <TextView
+           android:id="@+id/comic_name"
+           android:layout_width="0dp"
+           android:layout_height="40dp"
+           android:text="comic name"
+           android:gravity="center"
+           app:layout_constraintBottom_toTopOf="@id/guideline"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/guideline"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="horizontal"
+           app:layout_constraintGuide_percent="0.99"
+           />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

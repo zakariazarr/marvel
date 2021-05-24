@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grid"
+    tools:context=".app.comicDetail.ui.ComicDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/comic_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <TextView
+        android:id="@+id/comic_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:hint="comic title"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"/>
+
+    <Button
+        android:id="@+id/btn_events"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle_shape"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_series"
+        app:layout_constraintTop_toBottomOf="@id/comic_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/events_txt"
+        app:layout_constraintTop_toBottomOf="@id/btn_events"
+        app:layout_constraintStart_toStartOf="@id/btn_events"
+        app:layout_constraintEnd_toEndOf="@id/btn_events"/>
+
+    <Button
+        android:id="@+id/btn_series"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle_shape"
+        app:layout_constraintStart_toEndOf="@id/btn_events"
+        app:layout_constraintEnd_toStartOf="@id/btn_variants"
+        app:layout_constraintTop_toTopOf="@id/btn_events"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/series_txt"
+        app:layout_constraintTop_toBottomOf="@id/btn_series"
+        app:layout_constraintStart_toStartOf="@id/btn_series"
+        app:layout_constraintEnd_toEndOf="@id/btn_series"/>
+
+    <Button
+        android:id="@+id/btn_variants"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/circle_shape"
+        app:layout_constraintStart_toEndOf="@id/btn_series"
+        app:layout_constraintTop_toTopOf="@id/btn_events"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/variants_txt"
+        app:layout_constraintTop_toBottomOf="@id/btn_variants"
+        app:layout_constraintStart_toStartOf="@id/btn_variants"
+        app:layout_constraintEnd_toEndOf="@id/btn_variants"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
